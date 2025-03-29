@@ -1,7 +1,9 @@
-import * as wasm from "hello-wasm";
-
 // wasm.fib();
-import { fib } from "/src/lib.rs";
+import init, { fib } from "./pkg/hello_wasm.js"; // Import the generated Wasm module
+
+init().then(() => {
+  console.log("Wasm module loaded!");
+});
 
 const userInput = document.getElementById("user-input");
 const result = document.getElementById("result");

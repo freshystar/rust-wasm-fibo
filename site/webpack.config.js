@@ -7,19 +7,22 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
   },
-  module: {
-    rules: [
-      { test: /\.rs$/, loader: 'rust-emscripten-loader' },
-      // ...
-    ]
-  },
   mode: "development",
   experiments: {
     asyncWebAssembly: true,
+    syncWebAssembly: true,
+    topLevelAwait: true,  // Allow top-level `await`
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: "index.html" }, "main.css"],
+      patterns: [
+        { from: "index.html" }, 
+        "main.css",
+        { from: "pkg", to: "pkg" } // Copy WebAssembly package to `dist/`
+      ],
     }),
   ],
+  resolve: {
+    extensions: [".js", ".wasm"], // Ensure Webpack recognizes `.wasm`
+  },
 };
