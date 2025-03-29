@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Hello Rust + WASM = Fibonacci!</title>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container is-fluid">
+        <div class="content is-large">
+          <h1 class="title is-1">
+            Hello Rust + WASM = Fibonacci!
+          </h1>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <p class="is-3">
+            Playing With <strong>Rust</strong> and <strong>WASM</strong>
+          </p>
+          <p class="is-3">
+            To calculate the Fibonacci Sequence.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <h5>Choose a <span style="color: #f7a933">`n: u64`</span>
+            to calculate the first <span style="color: #f7a933">`n`</span> fibonacci sequence.</h5>
+          <div class="control" id="controller">
+            <input id="user-input" class="input" type="number" placeholder="Enter the number here">
+          </div>
+          <small class="tip"> Tip: Hit Enter when you are done.</small>
+          <hr />
+          <p class="result is-5" id="result"></p>
+          <hr />
+          <p class="result is-6" id="pref"></p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>Rust &lt;3 WASM. Let's stay Rusty😉</p>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
